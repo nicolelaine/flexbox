@@ -1,0 +1,47 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+
+/*This is the main container that holds all the smaller boxes inside*/
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    /*You need flex-wrap for align-content to work!*/
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+/*This is what gives the small boxes their size and color*/
+#container div {
+    width: 200px;
+    height: 200px;
+    /*flex-basis sets the width of the pixels before they go into the flex box. It is the initial basis that an element should be added into the box as. It can be a width or a height depending on the main axis direction*/
+    flex-basis: 200px;
+}
+
+ /*align-self is applied to individual properties, not to the flex container itself You can use this to position one thing at a time within the flex container
+div:nth-last-of-type(3) {
+    align-self: center;
+}
+*/
+
+/*sets up how much an element will grow IF there is any extra available space*/
+div:nth-last-of-type(3) {
+    flex-grow: 1;
+}
+
+div:nth-last-of-type(5) {
+    flex-grow: 2;
+}
+
+/*flex-shink is how to set how much items shrink when there is not enough space in the container*/
